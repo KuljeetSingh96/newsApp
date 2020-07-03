@@ -1,16 +1,15 @@
 package com.infosystest.ui
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.infosystest.databinding.NewsListItemBinding
 
 class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.ViewHolder>() {
-    private val repoListViewModels = ArrayList<NewsListResponse.RowsEntity>()
+    private val newsListViewModels = ArrayList<NewsListResponse.RowsEntity>()
     fun updateRepoListViewModels(repoListViewModels: List<NewsListResponse.RowsEntity>) {
-        this.repoListViewModels.clear()
-        this.repoListViewModels.addAll(repoListViewModels)
+        this.newsListViewModels.clear()
+        this.newsListViewModels.addAll(repoListViewModels)
         notifyDataSetChanged()
     }
 
@@ -19,15 +18,15 @@ class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return repoListViewModels.size
+        return newsListViewModels.size
     }
 
     override fun getItemId(position: Int): Long {
-        return repoListViewModels[position].imageHref.toString().toLong()
+        return newsListViewModels[position].imageHref.toString().toLong()
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val repoListViewModel = repoListViewModels[position]
+        val repoListViewModel = newsListViewModels[position]
         holder.bind(repoListViewModel)
 
     }
@@ -40,13 +39,6 @@ class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.ViewHolder>() {
 
         fun bind(newsListResponse: NewsListResponse.RowsEntity) {
             binding.viewModel = newsListResponse
-            binding.rootLayout.setOnClickListener {
-                if (binding.bottomContainer.visibility == View.VISIBLE) {
-                    binding.bottomContainer.visibility = View.GONE
-                } else {
-                    binding.bottomContainer.visibility = View.VISIBLE
-                }
-            }
         }
 
         companion object {
