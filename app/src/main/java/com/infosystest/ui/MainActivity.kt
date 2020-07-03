@@ -1,7 +1,8 @@
-package com.infosystest
+package com.infosystest.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.infosystest.R
 
 class MainActivity : AppCompatActivity() {
 
