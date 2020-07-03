@@ -8,6 +8,6 @@ import retrofit2.http.GET
 interface RestService {
     //FETCH TRENDING NEWS
     @GET(ApiConstants.GET_NEWS_LIST)
-     fun getNewsList(): Observable<List<NewsListResponse>>
+     fun getNewsList(): Observable<NewsListResponse>
 
 }

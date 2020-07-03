@@ -41,7 +41,7 @@ class Repository(context: Context) {
 
 
     fun getNewsList(
-      ): Observable<List<NewsListResponse>>? {
+      ): Observable<NewsListResponse>? {
         return restApi?.getNewsList()
     }
 }
