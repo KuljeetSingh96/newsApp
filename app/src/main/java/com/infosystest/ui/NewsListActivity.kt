@@ -21,7 +21,7 @@ class NewsListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val viewModel = createRepoListViewModel()
         DaggerNewsListComponent.builder()
-            .trendingRepoModule(NewsListModule(this, viewModel))
+            .newsListModule(NewsListModule(this, viewModel))
             .build().inject(this)
         setupBinding(viewModel)
         setupRecyclerView()
@@ -44,8 +44,8 @@ class NewsListActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         val adapter = NewsListAdapter()
-        binding.repoList.layoutManager = LinearLayoutManager(this)
-        binding.repoList.adapter = adapter
+        binding.newsList.layoutManager = LinearLayoutManager(this)
+        binding.newsList.adapter = adapter
         presenter.newsListViewModel.newsListData.observe(this, Observer<List<NewsListResponse.RowsEntity>> {
             adapter.updateRepoListViewModels(it)
         })
