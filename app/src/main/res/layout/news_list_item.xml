@@ -44,7 +44,7 @@
                     android:layout_marginStart="@dimen/dp_16"
                     android:layout_marginEnd="@dimen/dp_16"
                     android:layout_toLeftOf="@id/image_container"
-                    android:text="@{viewModel.title}"
+                    android:text="@{viewModel.description}"
                     android:textColor="@color/color_list_item"
                     android:textSize="@dimen/sp_12"
                     tools:text="Vita is the new is the long is the text is the news is the Vita is the new is the long is the text is the news is the Vita is the new is the long is the text is the news is the Vita is the new is the long is the text is the news is theVita is the new is the long is the text is the news is the " />
