@@ -25,7 +25,7 @@ class NewsListPresenter(
                 { _ -> onNetworkFailure() })
     }
     private fun mapNewsResponseToListItems(newsListResponse: NewsListResponse): List<NewsListResponse.RowsEntity>? {
-        val newsItems: List<NewsListResponse.RowsEntity> = ArrayList()
+        val newsItems: MutableList<NewsListResponse.RowsEntity> = ArrayList()
         if(newsListResponse.rows!!.isNotEmpty()){
             var listSize = newsListResponse.rows!!.size
             for (index in 0 until listSize) {
@@ -33,7 +33,7 @@ class NewsListPresenter(
                 if(rowsEntity.title.isNullOrBlank()&&rowsEntity.description.isNullOrBlank()){
                     continue;
                 }
-                newsItems.toMutableList().add(rowsEntity)
+                newsItems.add(rowsEntity)
             }
         }
         return newsItems
