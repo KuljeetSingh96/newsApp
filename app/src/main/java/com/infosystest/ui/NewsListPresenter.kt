@@ -21,10 +21,11 @@ class NewsListPresenter(
             ?.map(this::mapNewsResponseToListItems)
             ?.observeOn(getSchedulerProvider().ui())
             ?.subscribe(
-                { newsListResponse -> onRepoListSuccess(newsListResponse) },
+                { newsListResponse -> onNewsListSuccess(newsListResponse) },
                 { _ -> onNetworkFailure() })
     }
-    private fun mapNewsResponseToListItems(newsListResponse: NewsListResponse): List<NewsListResponse.RowsEntity>? {
+    @VisibleForTesting
+    internal  fun mapNewsResponseToListItems(newsListResponse: NewsListResponse): List<NewsListResponse.RowsEntity>? {
         val newsItems: MutableList<NewsListResponse.RowsEntity> = ArrayList()
         if(newsListResponse.rows!!.isNotEmpty()){
             var listSize = newsListResponse.rows!!.size
@@ -57,7 +58,7 @@ class NewsListPresenter(
     }
 
     @VisibleForTesting
-    internal fun onRepoListSuccess(newsListResponse: List<NewsListResponse.RowsEntity>?) {
+    internal fun onNewsListSuccess(newsListResponse: List<NewsListResponse.RowsEntity>?) {
         when {
             (newsListResponse!!.isNotEmpty()) -> {
                 newsListViewModel.newsListData.postValue(newsListResponse)
