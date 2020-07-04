@@ -11,9 +11,11 @@ class BindingAdapters {
         @JvmStatic
         fun setNewsAvatarUrl(imageView: ImageView, newsAvatarUrl: String?) {
             val context = imageView.context
+            //todo image url is blocked which is in response and  not working so currently using working image url for example
+            var localImage="https://avatars3.githubusercontent.com/u/16484556?s=60&v=4"
             if (!TextUtils.isEmpty(newsAvatarUrl)) {
                 Picasso.with(context)
-                    .load(newsAvatarUrl)
+                    .load(localImage)
                     .centerCrop()
                     .fit()
                     .into(imageView)

@@ -57,8 +57,9 @@
                 <ImageView
                     android:id="@+id/news_image"
                     android:layout_width="@dimen/dp_100"
-                    android:layout_height="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_100"
                     android:scaleType="centerCrop"
+                    android:background="@drawable/square_bg"
                     app:newsAvatarUrl="@{viewModel.imageHref}" />
                 <ImageView
                     android:id="@+id/arrow_image"
