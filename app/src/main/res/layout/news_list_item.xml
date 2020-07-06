@@ -18,16 +18,10 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/ListTitleTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginEnd="@dimen/dp_16"
-            android:layout_marginTop="@dimen/dp_6"
-            android:layout_marginBottom="@dimen/dp_6"
-            android:fontFamily="sans-serif-medium"
             android:text="@{viewModel.title}"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="@dimen/sp_15"
             tools:text="Vita is the new is the long is the text is the news is the Vita is the new is the long is the text is the news is the Vita is the new is the long is the text is the news is the Vita is the new is the long is the text is the news is theVita is the new is the long is the text is the news is the " />
 
         <RelativeLayout
@@ -38,15 +32,11 @@
             android:orientation="horizontal">
 
                 <TextView
+                    style="@style/ListTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginEnd="@dimen/dp_16"
-                    android:layout_toLeftOf="@id/image_container"
+                    android:layout_toStartOf="@id/image_container"
                     android:text="@{viewModel.description}"
-                    android:textColor="@color/color_list_item"
-                    android:textSize="@dimen/sp_12"
                     tools:text="Vita is the new is the long is the text is the news is the Vita is the new is the long is the text is the news is the Vita is the new is the long is the text is the news is the Vita is the new is the long is the text is the news is theVita is the new is the long is the text is the news is the " />
             <LinearLayout
                 android:id="@+id/image_container"
@@ -74,6 +64,6 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_seprator_line" />
+            android:background="@color/color_line" />
     </LinearLayout>
 </layout>

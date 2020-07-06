@@ -1,11 +1,12 @@
 package com.infosystest.network.repository
 
-import android.content.Context
 import com.infosystest.network.api.RestService
 import com.infosystest.ui.NewsListResponse
 import io.reactivex.Observable
+import okhttp3.Cache
+
 /**
- * Created by kuljeetsingh
+ * Created by Kuljeet Singh
  * <p>
  * Repository class is (will be) our single source of truth for all data.
  * The repository is essentially a proxy / collection of all data sources.
@@ -14,17 +15,17 @@ import io.reactivex.Observable
  * a refresh from the server.)
  * The repository may be broken down into separate components if the class becomes too large.
  */
-class Repository(context: Context) {
+class Repository(cache: Cache) {
 
     companion object {
         @Volatile
         private var repository: Repository? = null
         private var restApi: RestService? = null
 
-        fun getRepository(context: Context): Repository? {
+        fun getRepository(cache: Cache): Repository? {
             if (repository == null) {
                 synchronized(Repository::class.java) {
-                    if (repository == null) repository = Repository(context)
+                    if (repository == null) repository = Repository(cache)
                 }
             }
 
@@ -36,7 +37,7 @@ class Repository(context: Context) {
         if (repository != null) {
             throw RuntimeException("Use getRepository() method to get the single instance of this class.")
         }
-        restApi = RestApiProvider.getRestApi(context)
+        restApi = RestApiProvider.getRestApi(cache)
     }
 
 

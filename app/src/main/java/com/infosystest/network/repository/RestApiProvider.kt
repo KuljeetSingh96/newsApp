@@ -1,6 +1,5 @@
 package com.infosystest.network.repository
 
-import android.content.Context
 import com.infosystest.network.api.ApiConstants
 import com.infosystest.network.api.RestService
 import okhttp3.Cache
@@ -16,9 +15,7 @@ import java.util.concurrent.TimeUnit
 class RestApiProvider {
 companion object{
 
-    fun getRestApi(context: Context): RestService {
-        val cacheSize = 10 * 1024 * 1024.toLong() // 10 MB
-        val cache = Cache(context.cacheDir, cacheSize)
+    fun getRestApi(cache: Cache): RestService {
         val okHttpClient = getOkHttpClient(cache)
         val retrofit = Retrofit.Builder()
             .baseUrl(ApiConstants.REPO_BASE_URL)
@@ -45,7 +42,7 @@ companion object{
     private val networkCacheInterceptor = Interceptor { chain ->
         val response = chain.proceed(chain.request())
 
-        var cacheControl = CacheControl.Builder()
+        val cacheControl = CacheControl.Builder()
             .maxAge(2, TimeUnit.HOURS)
             .build()
 

@@ -28,11 +28,11 @@ class NewsListPresenter(
     internal  fun mapNewsResponseToListItems(newsListResponse: NewsListResponse): List<NewsListResponse.RowsEntity>? {
         val newsItems: MutableList<NewsListResponse.RowsEntity> = ArrayList()
         if(newsListResponse.rows!!.isNotEmpty()){
-            var listSize = newsListResponse.rows!!.size
+            val listSize = newsListResponse.rows!!.size
             for (index in 0 until listSize) {
-                var rowsEntity = newsListResponse.rows!![index]
+                val rowsEntity = newsListResponse.rows!![index]
                 if(rowsEntity.title.isNullOrBlank()&&rowsEntity.description.isNullOrBlank()){
-                    continue;
+                    continue
                 }
                 newsItems.add(rowsEntity)
             }

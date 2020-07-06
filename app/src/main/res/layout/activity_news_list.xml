@@ -18,23 +18,17 @@
 
         <TextView
             android:id="@+id/top_bar"
+            style="@style/TopBarHeader"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            android:drawableEnd="@drawable/ic_more_vert_black_24dp"
-            android:gravity="center"
-            android:paddingStart="@dimen/dp_16"
-            android:paddingEnd="16dp"
             android:text="@string/trending"
-            android:textColor="@color/color_top_bar"
-            android:textSize="@dimen/sp_21"
-            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/seprator_line"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_seprator_line"
+            android:background="@color/color_line"
             app:layout_constraintTop_toBottomOf="@+id/top_bar" />
 
         <com.facebook.shimmer.ShimmerFrameLayout
@@ -103,38 +97,29 @@
                 app:srcCompat="@drawable/ic_no_internet_connection" />
 
             <TextView
+                style="@style/RetryHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/dp_8"
-                android:fontFamily="sans-serif"
-                android:gravity="center"
                 android:text="@string/something_went_wrong"
-                android:textColor="#4A4A4A"
-                android:textSize="@dimen/sp_18"
-                android:textStyle="bold" />
+                 />
 
             <TextView
+                style="@style/RetrySubText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="sans-serif"
                 android:text="@string/an_alien_is_probably_blocking_your_signal"
-                android:textColor="@color/color_grey"
-                android:textSize="@dimen/sp_15" />
+                 />
         </LinearLayout>
 
         <Button
+            style="@style/RetryButtonStyle"
             android:id="@+id/retry_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_16"
-            android:background="@drawable/retry_button_round_bg"
-            android:fontFamily="sans-serif-medium"
             android:text="@string/retry"
             android:onClick="onRetryClicked"
-            android:textColor="@color/color_green"
-            android:textSize="@dimen/sp_15"
             android:visibility="@{viewModel.errorRetryVisibility}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

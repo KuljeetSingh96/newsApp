@@ -7,5 +7,50 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="TitleText">
+        <item name="android:textSize">@dimen/sp_21</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_top_bar</item>
+    </style>
+    <style name="ButtonText">
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/color_green</item>
+    </style>
 
+    <style name="TopBarHeader" parent="TitleText">
+        <item name="android:paddingStart">@dimen/dp_16</item>
+        <item name="android:paddingEnd">@dimen/dp_16</item>
+        <item name="android:drawableEnd">@drawable/ic_more_vert_black_24dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="RetryHeader" parent="TitleText">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/colorRetry</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="RetrySubText">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/color_grey</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+    </style>
+    <style name="RetryButtonStyle" parent="ButtonText">
+        <item name="android:layout_margin">@dimen/dp_16</item>
+        <item name="android:background">@drawable/retry_button_round_bg</item>
+    </style>
+    <style name="ListTitleTextStyle" parent="ButtonText">
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+        <item name="android:layout_marginStart">@dimen/dp_16</item>>
+        <item name="android:layout_marginEnd">@dimen/dp_16</item>
+        <item name="android:layout_marginTop">@dimen/dp_6</item>
+        <item name="android:layout_marginBottom">@dimen/dp_6</item>
+    </style>
+    <style name="ListTextStyle" parent="ButtonText">
+        <item name="android:textColor">@color/color_list_item</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:layout_marginStart">@dimen/dp_16</item>>
+        <item name="android:layout_marginEnd">@dimen/dp_16</item>
+    </style>
 </resources>

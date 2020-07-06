@@ -23,8 +23,8 @@ class NewsListPresenterTest {
     @Mock
     lateinit var repository: Repository
 
-    lateinit var mainViewModel: NewsListViewModel
-    lateinit var presenter: NewsListPresenter
+    private lateinit var mainViewModel: NewsListViewModel
+    private lateinit var presenter: NewsListPresenter
     private val testScheduler = TestScheduler()
     private var testSchedulerProvider: TestSchedulerProvider? = null
     @get:Rule
@@ -50,7 +50,7 @@ class NewsListPresenterTest {
         }
         presenter.getNewsList()
         testScheduler.triggerActions()
-        var responseList = presenter.mapNewsResponseToListItems(response)
+        val responseList = presenter.mapNewsResponseToListItems(response)
         Mockito.verify(presenter, Mockito.times(1)).onNewsListSuccess(responseList)
         Mockito.verify(presenter, Mockito.times(1)).loadListView()
     }
@@ -73,7 +73,7 @@ class NewsListPresenterTest {
         }
         presenter.getNewsList()
         testScheduler.triggerActions()
-        var responseList = presenter.mapNewsResponseToListItems(response)
+        val responseList = presenter.mapNewsResponseToListItems(response)
         Mockito.verify(presenter, Mockito.times(1)).onNewsListSuccess(responseList)
         Mockito.verify(presenter, Mockito.times(1)).loadRetryView()
     }
