@@ -1,4 +1,4 @@
-package com.infosystest.ui
+package com.infosystest.ui.news
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.infosystest.databinding.NewsListFragmentBinding
+import com.infosystest.model.news.NewsListResponse
+import com.infosystest.viewmodel.news.NewsListViewModel
 import javax.inject.Inject
 
 class NewsListFragment : Fragment() {
@@ -29,7 +31,12 @@ class NewsListFragment : Fragment() {
         savedInstanceState: Bundle?): View? {
         setupBinding(inflater, container)
         DaggerNewsListComponent.builder()
-            .newsListModule(NewsListModule(context!!, newsViewModel))
+            .newsListModule(
+                NewsListModule(
+                    context!!,
+                    newsViewModel
+                )
+            )
             .build().inject(this)
         return viewDataBinding.root
     }

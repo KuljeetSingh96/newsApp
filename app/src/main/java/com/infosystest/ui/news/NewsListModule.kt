@@ -1,8 +1,9 @@
-package com.infosystest.ui
+package com.infosystest.ui.news
 
 import android.content.Context
 import com.infosystest.network.repository.Repository
 import com.infosystest.network.schedulers.SchedulerProvider
+import com.infosystest.viewmodel.news.NewsListViewModel
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
@@ -18,6 +19,10 @@ class NewsListModule(context: Context, private val viewModel: NewsListViewModel)
     @Provides
     @Singleton
     fun getPresenter(): NewsListPresenter {
-        return NewsListPresenter(viewModel, repository,schedulerProvider)
+        return NewsListPresenter(
+            viewModel,
+            repository,
+            schedulerProvider
+        )
     }
 }

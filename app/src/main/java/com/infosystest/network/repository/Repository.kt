@@ -1,7 +1,7 @@
 package com.infosystest.network.repository
 
 import com.infosystest.network.api.RestService
-import com.infosystest.ui.NewsListResponse
+import com.infosystest.model.news.NewsListResponse
 import io.reactivex.Observable
 import okhttp3.Cache
 

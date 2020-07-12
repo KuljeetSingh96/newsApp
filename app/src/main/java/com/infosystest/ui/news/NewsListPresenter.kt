@@ -1,9 +1,11 @@
-package com.infosystest.ui
+package com.infosystest.ui.news
 
 import android.view.View
 import androidx.annotation.VisibleForTesting
 import com.infosystest.network.repository.Repository
 import com.infosystest.network.schedulers.SchedulerProvider
+import com.infosystest.model.news.NewsListResponse
+import com.infosystest.viewmodel.news.NewsListViewModel
 import io.reactivex.disposables.Disposable
 import java.util.*
 

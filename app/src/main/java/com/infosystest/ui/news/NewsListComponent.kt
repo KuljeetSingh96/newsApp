@@ -1,4 +1,4 @@
-package com.infosystest.ui
+package com.infosystest.ui.news
 
 import dagger.Component
 import javax.inject.Singleton

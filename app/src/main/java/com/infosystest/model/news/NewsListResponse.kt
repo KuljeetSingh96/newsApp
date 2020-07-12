@@ -1,4 +1,4 @@
-package com.infosystest.ui
+package com.infosystest.model.news
 
 data class NewsListResponse( var title: String? = "",
                         var rows: List<RowsEntity>?) {

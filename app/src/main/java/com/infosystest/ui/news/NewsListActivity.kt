@@ -1,4 +1,4 @@
-package com.infosystest.ui
+package com.infosystest.ui.news
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

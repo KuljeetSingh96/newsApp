@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.infosystest.ui.NewsListViewModel" />
+            type="com.infosystest.viewmodel.news.NewsListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

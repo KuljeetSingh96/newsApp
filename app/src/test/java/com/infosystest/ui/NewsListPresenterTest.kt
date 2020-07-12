@@ -3,8 +3,11 @@ package com.infosystest.ui
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.infosystest.model.news.NewsListResponse
 import com.infosystest.network.repository.Repository
 import com.infosystest.network.schedulers.SchedulerProvider
+import com.infosystest.ui.news.NewsListPresenter
+import com.infosystest.viewmodel.news.NewsListViewModel
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 import io.reactivex.schedulers.TestScheduler
@@ -67,7 +70,8 @@ class NewsListPresenterTest {
 
     @Test
     fun fetchUserRepositories_emptyResponse() {
-        val response = NewsListResponse("",emptyList())
+        val response =
+            NewsListResponse("", emptyList())
         Mockito.`when`(this.repository.getNewsList()).thenAnswer {
             return@thenAnswer Observable.just(response)
         }

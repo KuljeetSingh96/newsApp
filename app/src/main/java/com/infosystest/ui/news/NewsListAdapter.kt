@@ -1,9 +1,10 @@
-package com.infosystest.ui
+package com.infosystest.ui.news
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.infosystest.databinding.NewsListItemBinding
+import com.infosystest.model.news.NewsListResponse
 
 class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.ViewHolder>() {
     private val newsListViewModels = ArrayList<NewsListResponse.RowsEntity>()
@@ -14,7 +15,9 @@ class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder.createViewHolder(parent)
+        return ViewHolder.createViewHolder(
+            parent
+        )
     }
 
     override fun getItemCount(): Int {
