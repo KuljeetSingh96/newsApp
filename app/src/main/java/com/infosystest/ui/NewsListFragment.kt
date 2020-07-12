@@ -73,7 +73,7 @@ class NewsListFragment : Fragment() {
         })
     }
 
-    fun onRetryClicked() {
+    private fun onRetryClicked() {
         presenter.getNewsList()
     }
 
