@@ -1,4 +1,4 @@
-package com.infosystest.ui
+package com.infosystest.ui.news
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.gson.Gson
@@ -6,7 +6,6 @@ import com.google.gson.reflect.TypeToken
 import com.infosystest.model.news.NewsListResponse
 import com.infosystest.network.repository.Repository
 import com.infosystest.network.schedulers.SchedulerProvider
-import com.infosystest.ui.news.NewsListPresenter
 import com.infosystest.viewmodel.news.NewsListViewModel
 import io.reactivex.Observable
 import io.reactivex.Scheduler
@@ -35,7 +34,10 @@ class NewsListPresenterTest {
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        testSchedulerProvider = TestSchedulerProvider(testScheduler)
+        testSchedulerProvider =
+            TestSchedulerProvider(
+                testScheduler
+            )
         mainViewModel = Mockito.spy(NewsListViewModel())
         presenter = Mockito.spy(
             NewsListPresenter(
