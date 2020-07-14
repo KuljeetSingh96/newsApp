@@ -68,10 +68,10 @@ class NewsListFragment : Fragment() {
         val adapter = NewsListAdapter()
         viewDataBinding.newsList.layoutManager = LinearLayoutManager(context)
         viewDataBinding.newsList.adapter = adapter
-        presenter.newsListViewModel.newsListData.observe(this, Observer<List<NewsListResponse.RowsEntity>> {
+        presenter.newsListViewModel.newsListData.observe(this, Observer {
             adapter.updateRepoListViewModels(it)
         })
-        presenter.newsListViewModel.shimmerViewVisibility.observe(this, Observer<Int> {
+        presenter.newsListViewModel.shimmerViewVisibility.observe(this, Observer {
             if (it == View.VISIBLE) {
                 viewDataBinding.shimmerViewContainer.startShimmer()
             } else {
